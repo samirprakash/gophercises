@@ -66,7 +66,8 @@ Once a question has been displayed, user is going to provide an answer before we
 
 Modifying the existing program as such would be providing the desired execution:
 1. Declare a counter `correct`
-1. Parse the `[][]string` records from CSV into a `[]problem`. `problem` struct has been defined at the top with two fields - `q for question and a for answer`.
+1. Parse the `[][]string` records from CSV into a `[]problem` using the `parseRecords()` present in the `parse.go` file. 
+1. `problem` struct has been defined at the top with two fields - `q for question and a for answer`. `parseRecords()` would generate a slice of type `problem`.
 1. Iterate over `[]problem` and print one question at a time on the console
 1. Using `fmt.Scanf()`, wait for the user to provide an answer and then capture that answer
 1. Compare that answer from the CSV file and increment the `correct` counter for each correct answer
