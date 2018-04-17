@@ -11,7 +11,7 @@ We should try to break the problem into smaller parts so that we can handle thes
 * Requirement 3
   * __Add a timer with a default setting of 30 seconds__
 
-
+---
 ### Requirement 1
 
 By default, we have created a `problems.csv` file which contains multiple rows of questions and answers. But, a quiz game should be able to take different input files and still be able to run. We would like to provide the quiz master with an option to provide different Q&A inputs to our program. 
@@ -55,7 +55,7 @@ func main() {
   fmt.Println(records)
 }
 ```
-
+---
 ### Requirement 2
 
 After reading the content of the CSV file, we need to parse the entries into questions and answers and provide them to the end user in an iterative manner so that they can analyze the questions and provide answers to your program for evaluation.
