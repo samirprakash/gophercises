@@ -1,5 +1,4 @@
 # Exercise details
----
 
 Create a program that will read in a quiz provided via a CSV file and will then give the quiz to a user keeping track of how many questions they get right and how many they get incorrect. Regardless of whether the answer is correct or wrong the next question should be asked immediately afterwards.
 
@@ -10,7 +9,6 @@ Users should be asked to press enter (or some other key) before the timer starts
 At the end of the quiz the program should still output the total number of questions correct and how many questions there were in total. Questions given invalid answers or unanswered are considered incorrect.
 
 # Assumptions
----
 
 1. The default time limit should be 30 seconds, but should also be customizable via a flag.
 1. The CSV file should default to `problems.csv`, but the user should be able to customize the filename via a flag.
