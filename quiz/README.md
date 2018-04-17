@@ -29,3 +29,5 @@ At the end of the quiz the program should still output the total number of quest
 2+4,6
 5+2,7
 ```
+
+Check the solution and analysis of code [here](./Solution.md)
