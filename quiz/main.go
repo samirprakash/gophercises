@@ -4,7 +4,6 @@ import (
 	"encoding/csv"
 	"flag"
 	"fmt"
-	"log"
 	"os"
 )
 
@@ -30,20 +29,4 @@ func main() {
 
 	problems := parseRecords(records)
 	fmt.Println(problems)
-}
-
-func parseRecords(records [][]string) []problem {
-	ret := make([]problem, len(records))
-	for i, r := range records {
-		ret[i] = problem{
-			q: r[0],
-			a: r[1],
-		}
-	}
-	return ret
-}
-
-func exit(m string) {
-	log.Println(m)
-	os.Exit(1)
 }
