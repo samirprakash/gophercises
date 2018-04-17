@@ -27,6 +27,17 @@ func main() {
 		exit(fmt.Sprintf("not able to open the file %s\n", err))
 	}
 
+	correct := 0
 	problems := parseRecords(records)
-	fmt.Println(problems)
+	for i, p := range problems {
+		fmt.Printf("Question #%d. %s = ", i+1, p.q)
+
+		var answer string
+		fmt.Scanf("%s\n", &answer)
+		if answer == p.a {
+			correct++
+		}
+	}
+
+	fmt.Printf("You got %d answers correct out of %d questions\n", correct, len(problems))
 }
