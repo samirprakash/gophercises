@@ -32,8 +32,8 @@ package main
 import (
 	"encoding/csv"
 	"flag"
-  "os"
-  "fmt"
+	"fmt"
+	"os"
 )
 
 func main() {
