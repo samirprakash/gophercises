@@ -28,7 +28,7 @@ Going through the code below:
 1. Try to open this file with `os.Open()` and handle error, if any
 1. If file is opened successfully, then read its content and print it on the console using the `encoding/csv` package's `ReadAll()` function.
 
-```
+```go
 package main
 
 import (
@@ -73,7 +73,7 @@ Modifying the existing program as such would be providing the desired execution:
 1. Compare that answer from the CSV file and increment the `correct` counter for each correct answer
 1. Print the result at the end of the loop after exhausting all the questions.
 
-```
+```go
 package main
 
 import (
