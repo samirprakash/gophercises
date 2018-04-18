@@ -4,6 +4,7 @@ import (
 	"encoding/csv"
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"time"
 )
@@ -22,13 +23,13 @@ func main() {
 	// open and read CSV
 	file, err := os.Open(*csvFilename)
 	if err != nil {
-		exit(fmt.Sprintf("not able to open the file %s\n", *csvFilename))
+		log.Fatalf("not able to open the file %s\n", *csvFilename)
 	}
 
 	r := csv.NewReader(file)
 	records, err := r.ReadAll()
 	if err != nil {
-		exit(fmt.Sprintf("not able to open the file %s\n", err))
+		log.Fatalf("not able to open the file %s\n", err)
 	}
 
 	// generate a new timer based on limit provided by the user
