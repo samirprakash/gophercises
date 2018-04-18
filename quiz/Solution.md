@@ -171,11 +171,11 @@ func main() {
 
 # Further Reading
 
-* package [string](https://golang.org/pkg/strings/)
-* package [time](https://golang.org/pkg/time/)
-* package [os](https://golang.org/pkg/os/)
-* package [fmt](https://golang.org/pkg/fmt/)
-* package [encoding/csv](https://golang.org/pkg/encoding/csv/)
+* [package string](https://golang.org/pkg/strings/)
+* [package time](https://golang.org/pkg/time/)
+* [package os](https://golang.org/pkg/os/)
+* [package fmt](https://golang.org/pkg/fmt/)
+* [package encoding/csv](https://golang.org/pkg/encoding/csv/)
 * [Go Channels](https://golang.org/doc/effective_go.html#channels)
 * [Go Routines](https://golang.org/doc/effective_go.html#goroutines)
 * [Original problem statement](https://gophercises.com/exercises/quiz)
