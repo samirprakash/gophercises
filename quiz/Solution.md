@@ -2,14 +2,15 @@
 We should try to break the problem into smaller parts so that we can handle these requirements with proper execution and test.
 
 * Requirement 1
-  * __Input to the quiz program needs to be read from a CSV file.__
-  * __Print content of the CSV file on the console.__
+  * Input to the quiz program needs to be read from a CSV file.
+  * Print content of the CSV file on the console.
 * Requirement 2
-  * __Iterate through the content of the files and generate questions and answers for the user__
-  * __Provide questions to the user and an option to submit answers__
-  * __Evaluate these answers and provide a result to the user__
+  * Iterate through the content of the files and generate questions and answers for the user.
+  * Provide questions to the user and an option to submit answers.
+  * Evaluate these answers and provide a result to the user.
 * Requirement 3
-  * __Add a timer with a default setting of 30 seconds__
+  * Add a timer flag with a default value of 30 seconds
+	* Use the timer to exit from the program once the time limit has expired
 
 ---
 ### Requirement 1
@@ -89,19 +90,8 @@ type problem struct {
 }
 
 func main() {
-	csvFilename := flag.String("csv", "problems.csv", "a csv file in the format of 'question,answer'")
-	flag.Parse()
-
-	file, err := os.Open(*csvFilename)
-	if err != nil {
-		exit(fmt.Sprintf("not able to open the file %s\n", *csvFilename))
-	}
-
-	r := csv.NewReader(file)
-	records, err := r.ReadAll()
-	if err != nil {
-		exit(fmt.Sprintf("not able to open the file %s\n", err))
-	}
+	...
+	...
 
 	correct := 0
 	problems := parseRecords(records)
@@ -118,5 +108,74 @@ func main() {
 	fmt.Printf("You got %d answers correct out of %d questions\n", correct, len(problems))
 }
 ```
-
+---
 ### Requirement 3
+
+For adding a timer to the existing program, we would be using the `time` package which provides a handy `timer` type. There is a function `NewTimer` in this type, which returns a new timer after a fixed duration on a channel. We would be using this channel to check if we need to exit from the program.
+
+Another issue that we will address here is the execution pause that happens due to using `fmt.Scanf()`. This pauses the program till the time the user provides as input. Unless the user provides an input, the program execution will not proceed. This does not go well with our auto-exit logic when the time limit expires. We would be handling this issue by using go routines.
+
+The code snippet added below just shows the addition we have done over `requirement 2`:
+1. We have added a new variable `timer` which returns a new timer after the user defined time `limit` has expired
+1. We use this return value channel `<-timer.C` to select when the program exits
+1. For handling the `fmt.Scanf()` pause problem, we have removed that logic into a go routing anonymous function which returns the user inout into `ach`, another channel.
+1. We then use this logic to selec the condition where if a value is received in the `<-ach`, we would be adding that to the list of answers received.
+1. However, by executing the user input logic as a go routine, this flow executes in parallel to the timer logic in the program
+1. Based on which input is received, the program make a decision to continue with more questions or to exit
+
+```go
+package main
+
+import (
+	...
+	...
+	"time"
+)
+
+func main() {
+	limit := flag.Int("limit", 30, "maximum time to answer a question before user is time out of the game")
+	flag.Parse()
+
+	...
+	...
+	...
+
+	timer := time.NewTimer(time.Duration(*limit) * time.Second)
+	correct := 0
+	problems := parseRecords(records)
+
+	for i, p := range problems {
+		fmt.Printf("Question #%d. %s = ", i+1, p.q)
+
+		ach := make(chan string)
+		go func() {
+			var answer string
+			fmt.Scanf("%s\n", &answer)
+			ach <- answer
+		}()
+
+		select {
+		case <-timer.C:
+			fmt.Printf("\nYou got %d answers correct out of %d questions\n", correct, len(problems))
+			return
+		case answer := <-ach:
+			if answer == p.a {
+				correct++
+			}
+		}
+	}
+
+	fmt.Printf("You got %d answers correct out of %d questions\n", correct, len(problems))
+}
+```
+
+# Further Reading
+
+* package [string](https://golang.org/pkg/strings/)
+* package [time](https://golang.org/pkg/time/)
+* package [os](https://golang.org/pkg/os/)
+* package [fmt](https://golang.org/pkg/fmt/)
+* package [encoding/csv](https://golang.org/pkg/encoding/csv/)
+* [Go Channels](https://golang.org/doc/effective_go.html#channels)
+* [Go Routines](https://golang.org/doc/effective_go.html#goroutines)
+* [Original problem statement](https://gophercises.com/exercises/quiz)
