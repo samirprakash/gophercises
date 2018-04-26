@@ -13,9 +13,12 @@ func main() {
 	fmt.Println("Press ENTER when ready!")
 	scanner.Scan()
 
-	guess := 50
+	low := 1
+	high := 100
+
 	for {
-		fmt.Println("I guess the number is: ", guess)
+		guess := (low + high) / 2
+		fmt.Println("I guess the number is:", guess)
 		fmt.Println("Is that => ")
 		fmt.Println("(a) Too high!")
 		fmt.Println("(b) Too low!")
@@ -24,9 +27,9 @@ func main() {
 
 		response := scanner.Text()
 		if response == "a" {
-			guess--
+			high = guess - 1
 		} else if response == "b" {
-			guess++
+			low = guess + 1
 		} else if response == "c" {
 			fmt.Println("I win!")
 			break
