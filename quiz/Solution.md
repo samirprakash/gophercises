@@ -63,7 +63,7 @@ After reading the content of the CSV file, we need to parse the entries into que
 
 For this we need to convert `[][]string` being returned by `ReadAll()` into a slice `[]problem`, This `problem` struct contains two fields - question and answer. Once we have converted the content of `[][]string` into `[]problem`, we then need to iterate over `[]problem` and display the questions to the end user in an orderly fashion.
 
-Once a question has been displayed, user is going to provide an answer before we proceed to the next question. We need to capture this answer using `fmt.Scanf()`. Afyter capturing this value, we would check with the existing list of answers and validate if the user has prvovided a correct or a wrong answer. We would also keep a counter for the number of right answers and the end of the quiz, will display the tally on the console for the user.
+Once a question has been displayed, user is going to provide an answer before we proceed to the next question. We need to capture this answer using `fmt.Scanf()`. After capturing this value, we would check with the existing list of answers and validate if the user has provided a correct or a wrong answer. We would also keep a counter for the number of right answers and the end of the quiz, will display the tally on the console for the user.
 
 Modifying the existing program as such would be providing the desired execution:
 1. Declare a counter `correct`
@@ -118,8 +118,8 @@ Another issue that we will address here is the execution pause that happens due 
 The code snippet added below just shows the addition we have done over `requirement 2`:
 1. We have added a new variable `timer` which returns a new timer after the user defined time `limit` has expired
 1. We use this return value channel `<-timer.C` to select when the program exits
-1. For handling the `fmt.Scanf()` pause problem, we have removed that logic into a go routing anonymous function which returns the user inout into `ach`, another channel.
-1. We then use this logic to selec the condition where if a value is received in the `<-ach`, we would be adding that to the list of answers received.
+1. For handling the `fmt.Scanf()` pause problem, we have removed that logic into a go routing anonymous function which returns the user input into `ach`, another channel.
+1. We then use this logic to select the condition where if a value is received in the `<-ach`, we would be adding that to the list of answers received.
 1. However, by executing the user input logic as a go routine, this flow executes in parallel to the timer logic in the program
 1. Based on which input is received, the program make a decision to continue with more questions or to exit
 
