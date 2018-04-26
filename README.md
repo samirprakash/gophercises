@@ -2,4 +2,5 @@
 
 A set of coding exercises for budding gophers
 
-1. [Quiz Game](./quiz/README.md) - A quiz game with a timer
+* [Quiz Game](./quiz/) - A quiz game with a timer
+* [Guess Game](./guess/) - A game to guess a number from 1 to 100
