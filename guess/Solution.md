@@ -1,5 +1,3 @@
-# Solution
-
 The problem at hand has got 4 distinct section that can be handled one at a time to arrive at the final solution.
 
 - Create a program to guess a number from 1 to 100 proceeding linearly based on user input
@@ -7,6 +5,7 @@ The problem at hand has got 4 distinct section that can be handled one at a time
 - Find out the number of guesses required to guess the correct number that the user has selected
 - Check if the user is cheating and exit the program if that is the case
 
+---
 ##### Create a program to guess a number from 1 to 100 proceeding linearly based on user input
 
 Program needs to make an initial guess between 1 and 100 to get the execution flow going. It also needs to be provide user with three options - high, low or correct - in order to decide what the next guess would be based on the user's input.
@@ -65,6 +64,7 @@ func main() {
 }
 ```
 
+---
 ##### Optimize the program with a search algorithm and find out the number of guesses required to guess the correct number
 
 If you execute the above program, it would work as it is expected to. However, it will take a long time to guess the correct answer due the increment/decrement with 1 for every option the user chooses. We need to optimize this by using a search algorithm that reduces the complexity of this program. For that, we would be using the binary search algorithm.
@@ -116,6 +116,7 @@ func main() {
 }
 ```
 
+---
 ##### Check if the user is cheating and exit the program if that is the case
 
 Once we have a fully functional number guessing program, one of the things that we want to check for is the condition when the user is cheating with the program.
@@ -165,3 +166,11 @@ func main() {
     ...
 }
 ```
+
+---
+# Further Reading
+
+* [package os](https://golang.org/pkg/os/)
+* [package fmt](https://golang.org/pkg/fmt/)
+* [package bufio](https://golang.org/pkg/bufio/)
+* [Binary search algorithm](http://www.algolist.net/Algorithms/Binary_search)
