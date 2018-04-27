@@ -13,18 +13,35 @@ func main() {
 	fmt.Println("Press ENTER when ready!")
 	scanner.Scan()
 
-	counter := 0
+	counter := 1
+	cheatingCounter := 1
 	low := 1
 	high := 100
+	guess := 0
 
 	for {
-		guess := (low + high) / 2
-		counter++
+		currentGuess := guess
+		guess = (low + high) / 2
+
+		// Check if the user is cheating
+		if counter > 1 && currentGuess == guess {
+			cheatingCounter++
+			if cheatingCounter > 3 {
+				fmt.Println()
+				fmt.Println("Hey, I think you are cheating! I am going to stop the game now.")
+				fmt.Println()
+				break
+			}
+		}
+
+		fmt.Println()
 		fmt.Println("I guess the number is:", guess)
 		fmt.Println("Is that => ")
-		fmt.Println("(a) Too high!")
-		fmt.Println("(b) Too low!")
-		fmt.Println("(c) Correct!")
+		fmt.Println("\t(a) Too high!")
+		fmt.Println("\t(b) Too low!")
+		fmt.Println("\t(c) Correct!")
+		fmt.Println()
+		fmt.Print("Your answer => \t")
 		scanner.Scan()
 
 		response := scanner.Text()
@@ -33,11 +50,16 @@ func main() {
 		} else if response == "b" {
 			low = guess + 1
 		} else if response == "c" {
+			fmt.Println()
 			fmt.Println("I win!")
+			fmt.Println()
 			break
 		} else {
-			fmt.Println("This is not a valid input. Please try again!")
+			fmt.Println()
+			fmt.Println("This is not a valid input. Please enter: a, b or c!")
+			fmt.Println()
 		}
+		counter++
 	}
 	fmt.Println("Number of guesses required:", counter)
 }
