@@ -7,7 +7,7 @@ The problem at hand has got 4 distinct section that can be handled one at a time
 - Find out the number of guesses required to guess the correct number that the user has selected
 - Check if the user is cheating and exit the program if that is the case
 
-#### Create a program to guess a number from 1 to 100 proceeding linearly based on user input
+##### Create a program to guess a number from 1 to 100 proceeding linearly based on user input
 
 Program needs to make an initial guess between 1 and 100 to get the execution flow going. It also needs to be provide user with three options - high, low or correct - in order to decide what the next guess would be based on the user's input.
 
@@ -65,7 +65,7 @@ func main() {
 }
 ```
 
-#### Optimize the program with a search algorithm and find out the number of guesses required to guess the correct number
+##### Optimize the program with a search algorithm and find out the number of guesses required to guess the correct number
 
 If you execute the above program, it would work as it is expected to. However, it will take a long time to guess the correct answer due the increment/decrement with 1 for every option the user chooses. We need to optimize this by using a search algorithm that reduces the complexity of this program. For that, we would be using the binary search algorithm.
 
