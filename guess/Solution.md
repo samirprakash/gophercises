@@ -97,8 +97,7 @@ func main() {
 	guess := 0
 
 	for {
-		guess = (low + high) / 2
-
+    guess = (low + high) / 2
     ...
     ...
 
