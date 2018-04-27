@@ -13,11 +13,13 @@ func main() {
 	fmt.Println("Press ENTER when ready!")
 	scanner.Scan()
 
+	counter := 0
 	low := 1
 	high := 100
 
 	for {
 		guess := (low + high) / 2
+		counter++
 		fmt.Println("I guess the number is:", guess)
 		fmt.Println("Is that => ")
 		fmt.Println("(a) Too high!")
@@ -37,4 +39,5 @@ func main() {
 			fmt.Println("This is not a valid input. Please try again!")
 		}
 	}
+	fmt.Println("Number of guesses required:", counter)
 }
