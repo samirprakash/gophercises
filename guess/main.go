@@ -14,19 +14,18 @@ func main() {
 	scanner.Scan()
 
 	counter := 1
-	cheatingCounter := 1
+	cheatCounter := 1
 	low := 1
 	high := 100
 	guess := 0
 
 	for {
-		currentGuess := guess
+		lastGuess := guess
 		guess = (low + high) / 2
 
-		// Check if the user is cheating
-		if counter > 1 && currentGuess == guess {
-			cheatingCounter++
-			if cheatingCounter > 3 {
+		if counter > 1 && lastGuess == guess {
+			cheatCounter++
+			if cheatCounter > 3 {
 				fmt.Println()
 				fmt.Println("Hey, I think you are cheating! I am going to stop the game now.")
 				fmt.Println()
