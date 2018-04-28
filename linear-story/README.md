@@ -13,6 +13,5 @@ You can start the initial story with these few lines as example:
 ### Enhancements
 - Provide an option for the user to add new pages to the story in the game
 - Provide an option for the user to delete a page in the story
-- Check that there is at the least one page left in the story at a given point of time
 
 Check the solution and analysis [here](./Solution.md/)
