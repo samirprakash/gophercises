@@ -24,10 +24,17 @@ func (page *storyPage) addToEnd(text string) {
 	page.nextPage = &newPage
 }
 
+func (page *storyPage) addAfter(text string) {
+	newPage := storyPage{text: text, nextPage: page.nextPage}
+	page.nextPage = &newPage
+}
+
 func main() {
 	page := storyPage{text: "It is a dark and stormy night!", nextPage: nil}
 	page.addToEnd("You move ahead and try to find the magic helmet before the bad guys find it!")
 	page.addToEnd("You see a troll ahead in the dark!")
+
+	page.addAfter("Testing add after")
 
 	page.playStory()
 }
