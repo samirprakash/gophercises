@@ -16,6 +16,7 @@ func (page *storyPage) playStory() {
 	}
 }
 
+// Add nodes to the end of the linked list
 func (page *storyPage) addToEnd(text string) {
 	newPage := storyPage{text: text, nextPage: nil}
 	for page.nextPage != nil {
@@ -24,9 +25,15 @@ func (page *storyPage) addToEnd(text string) {
 	page.nextPage = &newPage
 }
 
+// Add nodes in  between the linked list
 func (page *storyPage) addAfter(text string) {
 	newPage := storyPage{text: text, nextPage: page.nextPage}
 	page.nextPage = &newPage
+}
+
+// Deleted nodes from the linked list
+func (page *storyPage) delete() {
+
 }
 
 func main() {
