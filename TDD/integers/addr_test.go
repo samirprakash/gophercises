@@ -1,12 +1,21 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestAddr(t *testing.T) {
-	got := add(2, 2)
+func TestAdd(t *testing.T) {
+	got := Add(2, 2)
 	want := 4
 
 	if got != want {
 		t.Errorf("got %d want %d", got, want)
 	}
+}
+
+func ExampleAdd() {
+	sum := Add(1, 5)
+	fmt.Println(sum)
+	// Output: 6
 }
