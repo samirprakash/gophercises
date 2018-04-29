@@ -34,6 +34,15 @@ func TestHello(t *testing.T) {
 		want := "Bonjour, Sam"
 		assertCorrectMessage(t, got, want)
 	})
+}
+
+func TestSalutation(t *testing.T) {
+	assertCorrectMessage := func(t *testing.T, got, want string) {
+		t.Helper()
+		if got != want {
+			t.Errorf("got '%s' want '%s' ", got, want)
+		}
+	}
 
 	t.Run("Salutation should be Hola in spanish", func(t *testing.T) {
 		got := salutation("spanish")
