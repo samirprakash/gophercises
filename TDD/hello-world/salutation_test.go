@@ -10,19 +10,19 @@ func TestSalutation(t *testing.T) {
 		}
 	}
 
-	t.Run("Salutation should be Hola in spanish", func(t *testing.T) {
+	t.Run("salutation should be Hola in spanish", func(t *testing.T) {
 		got := salutation("spanish")
 		want := "Hola, "
 		assertCorrectMessage(t, got, want)
 	})
 
-	t.Run("Salutation should be Bonjour in french", func(t *testing.T) {
+	t.Run("salutation should be Bonjour in french", func(t *testing.T) {
 		got := salutation("french")
 		want := "Bonjour, "
 		assertCorrectMessage(t, got, want)
 	})
 
-	t.Run("Salutation should be Hello if no language is specified", func(t *testing.T) {
+	t.Run("salutation should be Hello if no language is specified", func(t *testing.T) {
 		got := salutation("")
 		want := "Hello, "
 		assertCorrectMessage(t, got, want)
