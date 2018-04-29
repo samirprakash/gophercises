@@ -1,10 +1,16 @@
 package main
 
-const p = "Hello, "
+const pe = "Hello, "
+const ps = "Hola, "
 
-func hello(s string) string {
+func hello(s, l string) string {
 	if s == "" {
 		s = "World"
 	}
-	return p + s
+
+	if l == "spanish" {
+		return ps + s
+	}
+
+	return pe + s
 }
