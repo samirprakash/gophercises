@@ -11,13 +11,12 @@ func hello(name, lang string) string {
 		name = "World"
 	}
 
-	if lang == es {
+	switch lang {
+	case es:
 		return spanishSalutation + name
-	}
-
-	if lang == fr {
+	case fr:
 		return frenchSalutation + name
+	default:
+		return englishSalutation + name
 	}
-
-	return englishSalutation + name
 }
