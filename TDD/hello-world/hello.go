@@ -10,13 +10,17 @@ func hello(name, lang string) string {
 	if name == "" {
 		name = "World"
 	}
+	return salutation(lang) + name
+}
 
+func salutation(lang string) (salutation string) {
 	switch lang {
 	case es:
-		return spanishSalutation + name
+		salutation = spanishSalutation
 	case fr:
-		return frenchSalutation + name
+		salutation = frenchSalutation
 	default:
-		return englishSalutation + name
+		salutation = englishSalutation
 	}
+	return
 }
