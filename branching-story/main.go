@@ -36,6 +36,16 @@ func (s *storyNode) play() {
 	}
 }
 
+func (s *storyNode) print() {
+	fmt.Println(s.text)
+	if s.yesPath != nil {
+		s.yesPath.print()
+	}
+	if s.noPath != nil {
+		s.noPath.print()
+	}
+}
+
 func main() {
 
 	r := storyNode{text: "You are at the entrance of a cave. Do you want to go in the cave?", yesPath: nil, noPath: nil}
@@ -44,4 +54,5 @@ func main() {
 	r.yesPath = &l
 	r.noPath = &w
 	r.play()
+	r.print()
 }
