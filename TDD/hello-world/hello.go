@@ -1,5 +1,7 @@
 package main
 
-func hello(name string) string {
-	return "Hello, " + name
+const p = "Hello, "
+
+func hello(s string) string {
+	return p + s
 }
