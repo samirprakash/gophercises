@@ -3,4 +3,4 @@
 * [Hello World](./hello-world/)
 * [Integers](./integers/)
 * [Iteration](./iteration/)
-* [Array/Slices](./arrays/)
+* [Array/Slices](./arrays-slices/)
