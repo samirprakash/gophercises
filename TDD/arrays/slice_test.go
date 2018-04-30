@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestSlice(t *testing.T) {
 
@@ -8,7 +11,7 @@ func TestSlice(t *testing.T) {
 		got := slice(5)
 		want := []int{0, 0, 0, 0, 0}
 
-		if got == nil {
+		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got %v want %v", got, want)
 		}
 	})
