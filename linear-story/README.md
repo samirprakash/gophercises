@@ -13,5 +13,3 @@ You can start the initial story with these few lines as example:
 ### Enhancements
 - Provide an option for the user to add new pages to the story in the game
 - Provide an option for the user to delete a page in the story
-
-Check the solution and analysis [here](./Solution.md/)
