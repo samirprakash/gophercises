@@ -13,6 +13,12 @@ type Rectangle struct {
 	Breadth float64
 }
 
+// Triangle defines the dimensions of a triangle
+type Triangle struct {
+	Base   float64
+	Height float64
+}
+
 // Circle defines the dimensions of a circle
 type Circle struct {
 	Radius float64
@@ -30,5 +36,10 @@ func (r Rectangle) area() (a float64) {
 
 func (c Circle) area() (a float64) {
 	a = math.Pi * c.Radius * c.Radius
+	return
+}
+
+func (t Triangle) area() (a float64) {
+	a = (t.Base * t.Height) / 2
 	return
 }
