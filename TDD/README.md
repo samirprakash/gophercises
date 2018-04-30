@@ -1,6 +1,6 @@
 # TDD
 
-* [Hello World TDD](./hello-world/)
-* [Integers TDD](./integers/)
-* [Iteration TDD](./iteration/)
-* [Array/Slices TDD](./arrays/)
+* [Hello World](./hello-world/)
+* [Integers](./integers/)
+* [Iteration](./iteration/)
+* [Array/Slices](./arrays/)
