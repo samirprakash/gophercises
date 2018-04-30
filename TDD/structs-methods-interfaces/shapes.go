@@ -2,6 +2,11 @@ package main
 
 import "math"
 
+// Shape contains area() to be implemented
+type Shape interface {
+	area() float64
+}
+
 // Rectangle defines the dimensions of a rectangle
 type Rectangle struct {
 	Length  float64
