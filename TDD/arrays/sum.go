@@ -1,8 +1,8 @@
 package main
 
-func sum(n [5]int) (sum int) {
+func sum(n []int) (total int) {
 	for _, v := range n {
-		sum += v
+		total += v
 	}
 	return
 }
