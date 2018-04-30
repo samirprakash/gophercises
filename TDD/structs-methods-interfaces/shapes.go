@@ -1,17 +1,29 @@
 package main
 
-// Rectangle defines the dimensions
+import "math"
+
+// Rectangle defines the dimensions of a rectangle
 type Rectangle struct {
 	Length  float64
 	Breadth float64
 }
 
-func perimeter(rectangle Rectangle) (p float64) {
-	p = 2 * (rectangle.Length + rectangle.Breadth)
+// Circle defines the dimensions of a circle
+type Circle struct {
+	Radius float64
+}
+
+func (r Rectangle) perimeter() (p float64) {
+	p = 2 * (r.Length + r.Breadth)
 	return
 }
 
-func area(rectangle Rectangle) (a float64) {
-	a = rectangle.Length * rectangle.Breadth
+func (r Rectangle) area() (a float64) {
+	a = r.Length * r.Breadth
+	return
+}
+
+func (c Circle) area() (a float64) {
+	a = math.Pi * c.Radius * c.Radius
 	return
 }
