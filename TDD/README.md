@@ -4,3 +4,4 @@
 * [Integers](./integers/)
 * [Iteration](./iteration/)
 * [Array/Slices](./arrays-slices/)
+* [Pointers/Errors](./pointers-errors/)
