@@ -4,9 +4,9 @@ import "testing"
 
 func TestWallet(t *testing.T) {
 	w := Wallet{}
-	w.deposit(10)
+	w.Deposit(10)
 
-	got := w.balance()
+	got := w.Balance()
 	want := 10
 	if got != want {
 		t.Errorf("got %d want %d", got, want)
