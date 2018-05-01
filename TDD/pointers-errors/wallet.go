@@ -1,5 +1,9 @@
 package main
 
+import (
+	"errors"
+)
+
 // Wallet defines options for maintaining a wallet
 type Wallet struct {
 	balance Bitcoin
@@ -16,6 +20,11 @@ func (w *Wallet) Balance() Bitcoin {
 }
 
 // Withdraw removes bitcoin from wallet
-func (w *Wallet) Withdraw(amount Bitcoin) {
+func (w *Wallet) Withdraw(amount Bitcoin) error {
+	if amount > w.balance {
+		return errors.New("Insufficient Funds! Transaction not allowed")
+	}
+
 	w.balance -= amount
+	return nil
 }
