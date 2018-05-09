@@ -1,10 +1,10 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
+	"io"
 )
 
-func countdown(writer *bytes.Buffer) {
-	fmt.Fprintf(writer, "3")
+func countdown(writer io.Writer) {
+	fmt.Fprint(writer, "3\n")
 }
