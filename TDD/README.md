@@ -5,3 +5,4 @@
 * [Iteration](./iteration/)
 * [Array/Slices](./arrays-slices/)
 * [Pointers/Errors](./pointers-errors/)
+* [Dependency Injection](./dependency-injection)
