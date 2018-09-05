@@ -7,4 +7,4 @@ A set of coding exercises for budding gophers
 * [Linear Text Adventure](./linear-story/) - A linear text based adventure using linked list implementation
 * [Branching Text Adventure](./branching-story/) - A branched text adventure using tree implementation
 * [Test Driven Development](./TDD/) - Basic concepts using TDD approach
-* [URL Shortner](./url-shortner) - A package implementing URL shortner and redirection
+* [URL Shortner](./urlshort) - A package implementing URL shortner and redirection
