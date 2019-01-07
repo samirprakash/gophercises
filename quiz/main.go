@@ -17,7 +17,7 @@ type problem struct {
 func main() {
 	// define the flags - csv and limit
 	csvFilename := flag.String("csv", "problems.csv", "a csv file in the format of 'question,answer'")
-	limit := flag.Int("limit", 30, "maximum time to answer a question before user is time out of the game")
+	limit := flag.Int("limit", 30, "maximum time to answer a question before user is timed out of the game")
 	flag.Parse()
 
 	// open and read CSV
