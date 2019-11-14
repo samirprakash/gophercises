@@ -8,4 +8,4 @@ A set of coding exercises for budding gophers
 - [Branching Text Adventure](./branching-story/) - A branched text adventure using tree implementation
 - [Test Driven Development](./TDD/) - Basic concepts using TDD approach
 - [URL-Shortner](./urlshort) - A package implementing URL shortner and redirection
-- [go-todd](./go-todd) - A list of solutions to simple go basics problems
+- [go-tm](./go-tm) - A list of solutions to simple go basics problems
